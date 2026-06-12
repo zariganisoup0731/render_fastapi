@@ -46,6 +46,10 @@ def omikuji():
     ]
 
     return omikuji_list[random.randrange(10)]
+    
+@app.post("/present")
+async def give_present(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
 
 from fastapi.responses import HTMLResponse
 
@@ -67,7 +71,3 @@ def index():
     </html>
     """
     return HTMLResponse(content=html_content, status_code=200)
-
-@app.post("/present")
-async def give_present(present):
-    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
