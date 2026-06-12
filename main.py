@@ -54,12 +54,15 @@ from fastapi.responses import HTMLResponse
 @app.get("/index")
 def index():
     html_content = """
-    <html>
+    <html lang="ja">
+        <meta charset="UTF-8">
         <head>
-            <title>Some HTML in here</title>
+            <meta charset="UTF-8">
+            <title>課題9-1</title>
         </head>
         <body>
-            <h1>Look ma! HTML!</h1>
+            <h1>こんにちは！</h1>
+            <img src="img/udon.jpg">
         </body>
     </html>
     """
