@@ -52,8 +52,11 @@ async def give_present(present):
     return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
 
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 ### コードいろいろ... ###
+
+app.mount("/img", StaticFiles(directory="img"), name="img")
 
 @app.get("/index")
 def index():
@@ -66,7 +69,7 @@ def index():
         </head>
         <body>
             <h1>こんにちは！</h1>
-            <img src="img/udon.jpg">
+            <img src="/img/udon.jpg">
         </body>
     </html>
     """
