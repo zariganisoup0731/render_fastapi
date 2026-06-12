@@ -49,7 +49,7 @@ def omikuji():
     
 @app.post("/present")
 async def give_present(present):
-    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}  # f文字列というPythonの機能を使っている
+    return {"response": f"サーバです。出汁をとれ！ {present}ありがとう。お返しは羅臼昆布です。"}  # f文字列というPythonの機能を使っている
 
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
